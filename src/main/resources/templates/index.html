@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="http://libs.baidu.com/jquery/1.11.1/jquery.min.js"></script>
+</head>
+<body>
+<textarea id="content">
+
+</textarea>
+<button id="sendEmailBut">发送</button>
+<script>
+    $(function () {
+       $("#sendEmailBut").click(function () {
+           $.ajax({
+               "type":"POST",
+               "url":"/api/sendEmail",
+               "data":{
+                   "content":$("#content").val(),
+               },
+               "success":function (rest) {
+                   alert(rest);
+                   console.log(rest);
+               },
+               "error":function (e) {
+                   alert(e);
+               }
+           });
+       }) ;
+    });
+</script>
+</body>
+</html>

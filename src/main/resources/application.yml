@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  tomcat:
+    uri-encoding: UTF-8
+spring:
+  thymeleaf:
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+    servlet:
+      content-type: text/html;charset=UTF-8
+    cache: false
+    prefix: classpath:/templates/
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  messages:
+    encoding: UTF-8
+  freemarker:
+    charset: UTF-8
+    content-type: text/html
+    cache: true
+    enabled: true
+    suffix: .ftl
+    template-loader-path: classpath:/templates/
